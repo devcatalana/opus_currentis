@@ -1,0 +1,32 @@
+<app-listado-generico [listado]="peliculas">
+    <ng-container vacio>
+        <div>Mensaje personalizado para el contenido</div>
+    </ng-container>
+    
+    <ng-container contenido>
+        <div *ngFor="let pelicula of peliculas; let index  = index">
+
+            <div>
+                <h5># {{ index+1 }}</h5><button style="margin-left: 1rem;" (click)="remover(index)">Remover</button>
+            </div>
+
+            <div>
+                <h2>{{pelicula.title | uppercase}}</h2>
+            </div>
+            <div>
+                <h3>{{pelicula.year }}</h3>
+            </div>
+            <div>
+                <h3>{{pelicula.genre}}</h3>
+            </div>
+            <div>
+                <h3>{{pelicula.director}}</h3>
+            </div>
+            <div>
+                <p>{{pelicula.rating}}</p>
+            </div>
+            <hr>
+        </div>
+    </ng-container>
+</app-listado-generico>
+
